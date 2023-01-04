@@ -13,6 +13,6 @@ export const usePetStore = () => {
   return {
     status,
     error: error as AxiosError,
-    petStore: petStore || [],
+    petStoreData: petStore || {},
   };
 };

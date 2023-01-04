@@ -43,7 +43,7 @@ export const themePalette = {
         styleOverrides: {
           h1: {
             fontWeight: 700,
-            fontSize: '28px',
+            fontSize: '36px',
           },
           h2: {
             fontWeight: 700,
@@ -51,6 +51,14 @@ export const themePalette = {
           },
           body2: {
             color: grey['400'],
+          },
+        },
+      },
+      MuiCssBaseline: {
+        styleOverrides: {
+          body: {
+            backgroundColor: '#FAFAFF',
+            color: themePalette.palette.primary.light,
           },
         },
       },
