@@ -49,6 +49,10 @@ export const themePalette = {
             fontWeight: 700,
             fontSize: '28px',
           },
+          h6: {
+            fontWeight: 300,
+            fontSize: '12px',
+          },
           body2: {
             color: grey['400'],
           },
@@ -68,6 +72,22 @@ export const themePalette = {
           fullWidth: true,
         },
       },
+      MuiContainer: {
+        styleOverrides: {
+          root: {
+            marginTop: 10,
+            padding: 8,
+          }
+        }
+      },
+      MuiLink: {
+        styleOverrides: {
+          root: {
+            color: 'blue',
+            display: 'block'
+          }
+        }
+      }
 
     },
   };

@@ -5,6 +5,9 @@ import { ContextProps } from './PetStoreContext.types';
 
 export const defaultContext: ContextProps = {
     info: {
+        contact: {
+          email: ''
+        },
         description: '',
         title: '',
         version: '',
@@ -12,7 +15,9 @@ export const defaultContext: ContextProps = {
           name: '',
           url: '',
         },
-    }
+        termsOfServices: ''
+    },
+    tabs: []
   };
 
 export const PetStoreContext = createContext(defaultContext);
@@ -23,12 +28,15 @@ export const PetStoreContextProvider: FC<{ children?: ReactNode }> = ({ children
     console.log(petStoreData)
 
     const info = useMemo(() => petStoreData.info, [petStoreData])
+    const tabs = useMemo(() => petStoreData.tabs, [petStoreData])
+    
 
 
     return (
         <PetStoreContext.Provider
           value={{
               info,
+              tabs,
           }}
         >
           {children}
