@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown'
 import { Badge, Grid, Typography, Link } from '@mui/material';
 import { PetStoreContext } from 'contexts';
@@ -23,9 +22,9 @@ export const Info = () => {
                 <ReactMarkdown>{info.description}</ReactMarkdown>
             </Grid>
             <Grid item xs={12}>
-                <Link component={RouterLink} to={info?.termsOfServices}>Terms of Services</Link>
-                <Link component={RouterLink} to={info?.contact.email}>Contact the developer</Link>
-                <Link component={RouterLink} to={info?.license.url}>{info?.license.name}</Link>
+                <Link target="_blank" href={info?.termsOfServices}>Terms of Services</Link>
+                <Link target="_blank" href={info?.contact.email}>Contact the developer</Link>
+                <Link target="_blank" href={info?.license.url}>{info?.license.name}</Link>
             </Grid>
         </Grid>
     );

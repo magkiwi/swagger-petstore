@@ -13,7 +13,7 @@ interface Info {
     termsOfServices: string;
 }
 
-interface Tab {
+interface Tag {
   name: string;
   description: string;
   externalDocs: {
@@ -24,5 +24,5 @@ interface Tab {
 
   export type ContextProps = {
     info: Info;
-    tabs: Array<Tab>
+    tags: Array<Tag>
   };

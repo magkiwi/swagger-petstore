@@ -1,4 +1,4 @@
-import { FC, ReactNode, createContext, useMemo } from 'react';
+import { FC, ReactNode, createContext, useMemo, useEffect } from 'react';
 import { usePetStore } from 'shared/hooks/usePetStore';
 import { ContextProps } from './PetStoreContext.types';
 
@@ -17,7 +17,7 @@ export const defaultContext: ContextProps = {
         },
         termsOfServices: ''
     },
-    tabs: []
+    tags: []
   };
 
 export const PetStoreContext = createContext(defaultContext);
@@ -25,18 +25,17 @@ export const PetStoreContext = createContext(defaultContext);
 export const PetStoreContextProvider: FC<{ children?: ReactNode }> = ({ children }) => { 
 
     const { petStoreData } = usePetStore();
-    console.log(petStoreData)
 
     const info = useMemo(() => petStoreData.info, [petStoreData])
-    const tabs = useMemo(() => petStoreData.tabs, [petStoreData])
-    
+    const tags = useMemo(() => petStoreData.tags || [], [petStoreData]);
+    const paths = useMemo(() => petStoreData.paths, [petStoreData]);
 
 
     return (
         <PetStoreContext.Provider
           value={{
               info,
-              tabs,
+              tags,
           }}
         >
           {children}
