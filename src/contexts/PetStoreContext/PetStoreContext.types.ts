@@ -25,4 +25,5 @@ interface Tag {
   export type ContextProps = {
     info: Info;
     tags: Array<Tag>
+    paths: {}
   };

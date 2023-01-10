@@ -62,7 +62,7 @@ export const themePalette = {
         styleOverrides: {
           body: {
             backgroundColor: '#FAFAFF',
-            color: themePalette.palette.primary.light,
+            color: themePalette.palette.primary.main,
           },
         },
       },
