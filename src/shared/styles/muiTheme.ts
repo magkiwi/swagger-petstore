@@ -49,6 +49,10 @@ export const themePalette = {
             fontWeight: 700,
             fontSize: '28px',
           },
+          h3: {
+            fontWeight: 700,
+            fontSize: '14px',
+          },
           h6: {
             fontWeight: 300,
             fontSize: '12px',
@@ -77,6 +81,17 @@ export const themePalette = {
           root: {
             marginTop: 10,
             padding: 8,
+          }
+        }
+      },
+
+      MuiAccordionSummary: {
+        styleOverrides: {
+          content: {
+            margin: 0,
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center'
           }
         }
       },
