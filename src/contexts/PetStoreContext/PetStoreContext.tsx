@@ -55,6 +55,8 @@ export const PetStoreContextProvider: FC<{ children?: ReactNode }> = ({ children
         return allPaths
     }, [rawPaths])
 
+    console.log(paths)
+
 
     return (
         <PetStoreContext.Provider

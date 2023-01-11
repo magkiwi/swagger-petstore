@@ -1,17 +1,11 @@
 import React from 'react';
-import { Accordion, AccordionSummary, Box, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { COLOR_MAP, OPACITY_COLOR_MAP } from 'shared/helpers/helper';
 import { common } from '@mui/material/colors';
+import { Operation } from './partials/Operation';
+import { Path } from 'contexts/PetStoreContext/PetStoreContext.types';
 
-
-interface Props {
-    endpoint: string;
-    method: string;
-    detail: {
-        summary: string;
-    };
-  }
 
   const StyledAccordian = styled(Accordion)<{
     method: string;
@@ -33,8 +27,10 @@ interface Props {
     marginRight: 8,
   }));
 
+
+type Props = Omit<Path, 'tag'>
+
 export const Operations: React.FC<Props> = ({ endpoint, method, detail }) => {
-    console.log(detail)
 
     return (
         <StyledAccordian method={method}>
@@ -45,6 +41,9 @@ export const Operations: React.FC<Props> = ({ endpoint, method, detail }) => {
                 <Typography variant='h3' fontSize='16px'>{endpoint}</Typography>
                 { detail.summary && <Typography mx={5}>{detail.summary}</Typography>}
             </AccordionSummary>
+            <AccordionDetails>
+                <Operation {...detail}/>
+            </AccordionDetails>
         </StyledAccordian>
     )
 
