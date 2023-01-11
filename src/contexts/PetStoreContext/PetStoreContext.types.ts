@@ -22,13 +22,18 @@ interface Tag {
   }
 }
 
-type Parameter = {
+export type Parameter = {
   description: string;
   format: string; 
   in: string;
   name: string;
   required: boolean;
   type: string;
+  schema: {}
+  collectionFormat: string;
+  items: {
+    enum: string[];
+  }
 }
 
 export type OperationType = {
@@ -36,8 +41,9 @@ export type OperationType = {
   summary: string;
   parameters: Array<Parameter>;
   produces: string[];
-  response: {[key: number]: {description: string}};
+  responses: {[key: string | number]: {description: string, schema?: {}}};
   tags: string[];
+  
 }
 
 export type Path = {

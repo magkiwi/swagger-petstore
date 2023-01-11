@@ -33,6 +33,7 @@ export const Tabs = () => {
                                     <AccordionDetails>
                                         {paths.filter((path: any) => path.tag.has(tagName)).map((path: any) => (
                                             <Operations 
+                                                key={`${path.endpoint}-${path.method}`}
                                                 endpoint={path.endpoint}
                                                 method={path.method}
                                                 detail={path.detail}

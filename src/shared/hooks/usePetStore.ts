@@ -5,7 +5,7 @@ import { petStoreClient } from 'clients/petStoreClient';
 
 
 export const usePetStore = () => {
-  const { data: { data: petStore } = {}, status, error } = useQuery(
+  let { data: { data: petStore } = {}, status, error } = useQuery(
     [cacheKeys.getPetStore],
     () => petStoreClient.getPetStore(),
   );

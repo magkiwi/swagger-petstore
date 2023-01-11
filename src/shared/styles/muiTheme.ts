@@ -51,6 +51,10 @@ export const themePalette = {
           },
           h3: {
             fontWeight: 700,
+            fontSize: '16px',
+          },
+          h4: {
+            fontWeight: 700,
             fontSize: '14px',
           },
           h6: {
@@ -73,7 +77,6 @@ export const themePalette = {
       MuiTextField: {
         defaultProps: {
           variant: 'outlined',
-          fullWidth: true,
         },
       },
       MuiContainer: {
@@ -102,7 +105,7 @@ export const themePalette = {
             display: 'block'
           }
         }
-      }
+      },
 
     },
   };
